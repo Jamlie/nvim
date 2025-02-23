@@ -21,9 +21,7 @@ end
 local opts = {
 	sources = {
 		-- go
-		null_ls.builtins.formatting.gofumpt,
-		null_ls.builtins.formatting.goimports_reviser,
-		null_ls.builtins.formatting.golines,
+		-- null_ls.builtins.formatting.goimports,
 
 		-- js
 		null_ls.builtins.formatting.prettier,
@@ -40,5 +38,7 @@ local opts = {
 vim.cmd([[autocmd BufWritePre *.cpp lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.templ lua vim.lsp.buf.format({ async = false })]])
+vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = false })]])
+vim.cmd([[autocmd BufWritePre *.go GoImports]])
 
 return opts
