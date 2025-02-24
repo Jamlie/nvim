@@ -217,7 +217,7 @@ local M = {
 		{
 			leader("fg"),
 			group = "Git",
-			{ leader("fgb"), "<cmd>telescope git_branches<cr>", name = "git branches" },
+			{ leader("fgb"), "<cmd>Telescope git_branches<cr>", name = "git branches" },
 			{ leader("fgf"), "<cmd>Telescope git_files<CR>", name = "Git Files" },
 			{ leader("fgc"), "<cmd>Telescope git_commits<CR>", name = "Git Commits" },
 			{ leader("fgs"), "<cmd>Telescope git_status<CR>", name = "Git Status" },
