@@ -52,12 +52,19 @@ local plugins = {
 		end,
 	},
 
+	-- nvim tree
 	{
 		"nvim-tree/nvim-tree.lua",
 		lazy = false,
 		config = function()
 			require("nvim-tree").setup({})
 		end,
+	},
+
+	-- markdown
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
 	},
 
 	-- statusline
