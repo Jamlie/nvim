@@ -39,6 +39,8 @@ vim.cmd([[autocmd BufWritePre *.cpp lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.templ lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = false })]])
+vim.cmd([[autocmd BufWritePre *.py lua vim.lsp.buf.format({ async = false })]])
+vim.cmd([[autocmd BufWritePre *.html lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.go GoImports]])
 
 return opts

@@ -236,6 +236,7 @@ local plugins = {
 			require("gitsigns").setup()
 		end,
 	},
+	"tpope/vim-fugitive",
 
 	-- lsp
 	"hrsh7th/nvim-cmp",
