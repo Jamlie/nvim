@@ -241,7 +241,7 @@ local M = {
 		{
 			leader("cf"),
 			function()
-				vim.lsp.bug.format({ async = false })
+				vim.lsp.buf.format({ async = false })
 			end,
 			name = "Format",
 		},
