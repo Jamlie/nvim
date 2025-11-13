@@ -309,4 +309,6 @@ vim.keymap.set(
   { desc = 'Toggle Comment', noremap = true, silent = true }
 )
 
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+
 return M

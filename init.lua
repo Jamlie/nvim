@@ -144,6 +144,8 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+vim.cmd [[set guicursor=n-v-c-i:block]]
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -409,6 +411,7 @@ require('lazy').setup({
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
+          file_ignore_patterns = { 'node_modules' },
         },
         -- pickers = {}
         extensions = {
