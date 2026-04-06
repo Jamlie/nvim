@@ -699,7 +699,7 @@ require('lazy').setup({
         go = { 'goimports', 'gofmt' },
         -- You can also customize some of the format options for the filetype
         rust = { 'rustfmt', lsp_format = 'fallback' },
-        typescript = { 'biome' },
+        typescript = { 'prettier' },
       },
     },
   },
