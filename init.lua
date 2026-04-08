@@ -700,9 +700,12 @@ require('lazy').setup({
         -- You can also customize some of the format options for the filetype
         rust = { 'rustfmt', lsp_format = 'fallback' },
         javascript = { 'prettier' },
-        javascriptreact = { 'prettier' }, -- JSX
+        javascriptreact = { 'prettier' },
         typescript = { 'prettier' },
-        typescriptreact = { 'prettier' }, -- TSX
+        typescriptreact = { 'prettier' },
+
+        json = { 'prettier' },
+        jsonc = { 'prettier' },
       },
     },
   },
