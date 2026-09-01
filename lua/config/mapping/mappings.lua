@@ -300,6 +300,55 @@ local M = {
     mode = 'n',
     desc = 'Switch to the buffer to the bottom',
   },
+  {
+    leader 'go',
+    vim.cmd.GitConflictChooseOurs,
+    name = 'Git Choose Ours',
+    mode = 'n',
+    desc = 'Git Choose Ours',
+  },
+  {
+    leader 'gt',
+    vim.cmd.GitConflictChooseTheirs,
+    name = 'Git Choose Theirs',
+    mode = 'n',
+    desc = 'Git Choose Theirs',
+  },
+  {
+    leader 'gb',
+    vim.cmd.GitConflictChooseBoth,
+    name = 'Git Choose Both',
+    mode = 'n',
+    desc = 'Git Choose Both',
+  },
+  {
+    leader 'gn',
+    vim.cmd.GitConflictChooseNone,
+    name = 'Git Choose None',
+    mode = 'n',
+    desc = 'Git Choose None',
+  },
+  {
+    leader 'ge',
+    vim.cmd.GitConflictNextConflict,
+    name = 'Git Next Conflict',
+    mode = 'n',
+    desc = 'Git Next Conflict',
+  },
+  {
+    leader 'gq',
+    vim.cmd.GitConflictPrevConflict,
+    name = 'Git Previous Conflict',
+    mode = 'n',
+    desc = 'Git Previous Conflict',
+  },
+  {
+    leader 'gl',
+    vim.cmd.GitConflictListQf,
+    name = 'Git Conflict List',
+    mode = 'n',
+    desc = 'Git Conflict List',
+  },
 }
 
 vim.keymap.set(

@@ -224,6 +224,18 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.api.nvim_create_augroup('SetIndent', { clear = true })
+
+vim.api.nvim_create_autocmd('FileType', {
+  group = 'SetIndent',
+  pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'json', 'yaml', 'html', 'css' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+})
+
 ---@type vim.Option
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
@@ -696,7 +708,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform will run multiple formatters sequentially
-        go = { 'goimports', 'gofmt' },
+        go = { 'gofmt', 'goimports' },
         -- You can also customize some of the format options for the filetype
         rust = { 'rustfmt', lsp_format = 'fallback' },
         javascript = { 'prettier' },
@@ -828,6 +840,8 @@ require('lazy').setup({
     },
   },
 
+  { 'akinsho/git-conflict.nvim', version = '*', config = true },
+
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -895,8 +909,11 @@ require('lazy').setup({
         -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
         -- vim.wo.foldmethod = 'expr'
 
-        -- enables treesitter based indentation
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        -- enables treesitter based indentation (except Go, whose methods
+        -- rely on plain autoindent instead)
+        if language ~= 'go' then
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
       end
 
       local available_parsers = require('nvim-treesitter').get_available()
